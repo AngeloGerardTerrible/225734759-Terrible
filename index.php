@@ -6,8 +6,9 @@
     <title>Document</title>
 </head>
 <body>
+    <H1>LOOPS</h1>
     <?php
-    echo "Activity 1<br>1.1) ";
+    echo "Activity 1: Number Counter<br>1.1) ";
     $counter = 1;
     while($counter <= 10){
         echo $counter." ";
@@ -24,6 +25,27 @@
     }
     ?>
 
+    <?php
+    echo "<br><br>Activity 3: Multiplication Table<br>";
+    $multiplier = 7;
+    for ($i = 1; $i <= 10; $i++) {
+    $result = $multiplier * $i;
+    echo "$multiplier x $i = $result<br>";
+    }
+    ?>
 
+    <?php
+    echo "<br><br>Activity 4: Loop Control with break and continue<br>";
+    for ($i = 1; $i <= 10; $i++) {
+    if ($i == 5) {
+        continue;
+    }
+    if ($i == 8) {
+        echo "$i<br>";
+        break;
+    }
+    echo $i." ";
+    }
+    ?>
 </body>
 </html>
