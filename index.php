@@ -62,15 +62,29 @@
     <?php
     echo "<br><br>Activity 6: Array Iteration with foreachs<br>";
     $favoriteMovies = array(
-        "Silence of the Lamb",
-        "Lethal weapon",
-        "Avengers: End Game",
-        "Ace Ventura",
-        "The Gods must be crazy"
+        "1. Silence of the Lamb",
+        "2. Lethal weapon",
+        "3. Avengers: End Game",
+        "4. Ace Ventura",
+        "5. The Gods must be crazy"
     );
 
     foreach ($favoriteMovies as $movie) {
         echo $movie."<br>";
+    }
+    ?>
+
+    <?php
+    echo "<br>Activity 7: Key-Value Pairs with foreach<br>";
+    $studentInfo = array(
+        "Name" => "Angelo",
+        "Age" => 28,
+        "Grade" => 90,
+        "City" => "Baguio"
+    );
+
+    foreach ($studentInfo as $key => $value) {
+        echo "$key: $value<br>";
     }
     ?>
 </body>
