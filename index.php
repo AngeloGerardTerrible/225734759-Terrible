@@ -35,7 +35,7 @@
     ?>
 
     <?php
-    echo "<br><br>Activity 4: Loop Control with break and continue<br>";
+    echo "<br>Activity 4: Loop Control with break and continue<br>";
     for ($i = 1; $i <= 10; $i++) {
     if ($i == 5) {
         continue;
@@ -45,6 +45,32 @@
         break;
     }
     echo $i." ";
+    }
+    ?>
+
+    <?php
+    echo "<br>Activity 5: Sum of Numbers<br>";
+    $sum = 0;
+    $i = 1;
+    while ($i <= 100) {
+    $sum += $i;
+    $i++;
+    }
+    echo "The sum of numbers from 1 to 100 is: $sum";
+    ?>
+
+    <?php
+    echo "<br><br>Activity 6: Array Iteration with foreachs<br>";
+    $favoriteMovies = array(
+        "Silence of the Lamb",
+        "Lethal weapon",
+        "Avengers: End Game",
+        "Ace Ventura",
+        "The Gods must be crazy"
+    );
+
+    foreach ($favoriteMovies as $movie) {
+        echo $movie."<br>";
     }
     ?>
 </body>
