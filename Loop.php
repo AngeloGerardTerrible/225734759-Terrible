@@ -25,7 +25,7 @@
     }  
     ?>
 
-    <p><br>Activity2: </p>
+    <p><br>Activity2: Password Validator</p>
     <?php
     $accessGranted = false;
     do {
