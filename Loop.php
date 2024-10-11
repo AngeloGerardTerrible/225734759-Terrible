@@ -22,7 +22,40 @@
     while ($i <= 20) {
         echo $i . " ";
         $i += 2;
+    }  
+    ?>
+
+    <p><br>Activity2: </p>
+    <?php
+    $accessGranted = false;
+    do {
+        if (isset($_POST['submit'])) {
+            $input = trim($_POST['password']);
+
+            if ($input != "password123") {
+                echo "Incorrect password. ";
+                unset($_POST['submit']);
+            } else {
+                $accessGranted = true;
+            }
+        }
+    ?>
+    <form action="" method="post">
+        <label for="password">Please enter the password:</label>
+        <input type="password" id="password" name="password">
+        <input type="submit" name="submit" value="Submit">
+    </form>
+
+    <?php
+    } while (!$accessGranted && isset($_POST['submit']));
+
+    if ($accessGranted) {
+        echo "Access Granted.";
     }
+    ?>
+
+    <?php
+    unset($_POST['submit']);
     ?>
 
     <?php
@@ -87,5 +120,7 @@
         echo "$key: $value<br>";
     }
     ?>
+
+
 </body>
 </html>
