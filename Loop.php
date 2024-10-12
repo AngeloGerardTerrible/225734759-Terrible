@@ -117,26 +117,34 @@
     }
     ?>
 
-    <p>Activity 8: Factorial Calculator<br></p>
+    <p>Activity 8: Factorial Calculator</p>
     <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $num = $_POST["num"];
-        if ($num > 0 && is_int($num)) {
-            $factorial = 1;
-            for ($i = 1; $i <= $num; $i++) {
-                $factorial *= $i;
-            }
-            echo "Factorial of $num is: $factorial";
-        } else {
-            echo "Error: Please enter a positive integer.";
+    function calculateFactorial($num) {
+        $factorial = 1;
+        for ($i = 1; $i <= $num; $i++) {
+            $factorial *= $i;
         }
-        }
+        return $factorial;
+    }
+
+    $num = 5; // example input
+    $factorial = calculateFactorial($num);
+    echo "Factorial of $num is: $factorial\n";
     ?>
 
-    <form method="post">
-    <label for="num">Enter a number:</label>
-    <input type="number" id="num" name="num" required>
-    <input type="submit" value="Calculate Factorial">
-    </form>
+    <p>Activity 9: FizzBuzz Challenge</p>
+    <?php
+    for ($i = 1; $i <= 50; $i++) {
+        if ($i % 3 == 0 && $i % 5 == 0) {
+            echo "FizzBuzz\n";
+        } elseif ($i % 3 == 0) {
+            echo "Fizz\n";
+        } elseif ($i % 5 == 0) {
+            echo "Buzz\n";
+        } else {
+            echo "$i\n";
+        }
+    }
+    ?>
 </body>
 </html>
