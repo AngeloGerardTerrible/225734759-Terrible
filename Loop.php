@@ -55,10 +55,6 @@
     ?>
 
     <?php
-    unset($_POST['submit']);
-    ?>
-
-    <?php
     echo "<br><br>Activity 3: Multiplication Table<br>";
     $multiplier = 7;
     for ($i = 1; $i <= 10; $i++) {
@@ -121,6 +117,26 @@
     }
     ?>
 
+    <p>Activity 8: Factorial Calculator<br></p>
+    <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $num = $_POST["num"];
+        if ($num > 0 && is_int($num)) {
+            $factorial = 1;
+            for ($i = 1; $i <= $num; $i++) {
+                $factorial *= $i;
+            }
+            echo "Factorial of $num is: $factorial";
+        } else {
+            echo "Error: Please enter a positive integer.";
+        }
+        }
+    ?>
 
+    <form method="post">
+    <label for="num">Enter a number:</label>
+    <input type="number" id="num" name="num" required>
+    <input type="submit" value="Calculate Factorial">
+    </form>
 </body>
 </html>
