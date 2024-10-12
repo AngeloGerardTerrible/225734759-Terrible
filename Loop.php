@@ -146,5 +146,36 @@
         }
     }
     ?>
+
+    <p>Activity 10: Prime Number Checker</p>
+    <?php
+    function isPrime($num) {
+        if ($num <= 1) {
+            return false;
+        }
+        for ($i = 2; $i <= sqrt($num); $i++) {
+            if ($num % $i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    if (isset($_POST['submit'])) {
+        $num = (int) $_POST['number'];
+        if (isPrime($num)) {
+            echo "$num is a prime number.\n";
+        } else {
+            echo "$num is not a prime number.\n";
+        }
+    }
+    ?>
+
+    <form method="post">
+        <label for="number">Enter a number:</label>
+        <input type="number" id="number" name="number" required>
+        <button type="submit" name="submit">Check if prime</button>
+    </form>
+
 </body>
 </html>
