@@ -4,6 +4,7 @@
     if ($_SERVER["REQUEST_METHOD"]=="POST"){
         $name =$_POST['name'];
         $idno=$_POST['id_no'];
+        $id=$_POST['id'];
     }
 
     if (!empty($name)&& !empty($idno)){
@@ -13,7 +14,7 @@
             echo "NEW Student Added";
         } 
         else {
-            echo "Failed to add new Student.";
+            echo "Failed to add new Student" . $sql . "<br>" . $conn->error;
         }
     }
     else{
@@ -32,8 +33,9 @@
     <h2>Add New Student</h2>
 
     <form method = "post" action="add.php">
-        Name: <input type="text" name="name"> <br><br>
-        ID Number: <input type="text" name="id_no"> <br><br>
+    <input type="hidden" name="id" values="<?php echo $idno; ?>">
+    Name: <input type="text" name="name" values="<?php echo $name; ?>"> <br><br>
+    ID Number: <input type="text" name="id_no" values="<?php echo $idno; ?>> <br><br>
         <input type="submit" value= "Add Student">
     </form>
 
